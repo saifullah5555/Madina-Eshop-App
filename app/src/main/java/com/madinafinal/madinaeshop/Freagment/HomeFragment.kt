@@ -1,15 +1,16 @@
 package com.madinafinal.madinaeshop.Freagment
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.madinafinal.madinaeshop.R
+import com.madinafinal.madinaeshop.adapter.PopularAdapter
 import com.madinafinal.madinaeshop.databinding.FragmentHomeBinding
 import kotlin.collections.ArrayList
+import android.view.View as View1
 
 
 class HomeFragment : Fragment() {
@@ -25,7 +26,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View1 {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container,false)
         return binding.root
@@ -33,7 +34,7 @@ class HomeFragment : Fragment() {
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View1, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
@@ -48,5 +49,17 @@ class HomeFragment : Fragment() {
         val imageSlider = binding.imageSlider
         imageSlider.setImageList(imageList)
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
+
+
+        val foodName= listOf("জয়তুন ফল","সরিষা মধু","খলিসা ফুলের মধু","সুস্বাধু ড্রাই ফুড")
+        val price= listOf("৳ ২০০","৳ ৫৯৯","৳ ৮০০","৳ ৫৫০")
+        val imagePopular= listOf(R.drawable.jaytun_banner2,R.drawable.sorisamodhu_banner,
+            R.drawable.khalisa_banner,R.drawable.dryfood_banner)
+
+        val adapter = PopularAdapter(foodName,price,imagePopular)
+        binding.PopularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.PopularRecyclerView.adapter = adapter
+
+
     }
 }
