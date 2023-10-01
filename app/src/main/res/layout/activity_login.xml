@@ -161,11 +161,11 @@
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/nextButton"
+        app:layout_constraintStart_toEndOf="@+id/temp_Home_Btn"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextButton"
+        android:id="@+id/temp_Home_Btn"
         android:layout_width="150dp"
         android:layout_height="57dp"
         android:layout_marginTop="16dp"
@@ -203,7 +203,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextButton" />
+        app:layout_constraintTop_toBottomOf="@+id/temp_Home_Btn" />
 
     <TextView
         android:id="@+id/Ragister_Button_text"

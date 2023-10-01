@@ -3,4 +3,6 @@
     <string name="Location_text_string">আপনার হাতে দ্রুততর সময়ের মধ্যে পন্যটি পৌছে দেওয়ার জন্য\n
         আপনার ডিভাইসের অবস্থান জানাটা আমাদের খুবই প্রয়োজন,
         যাতে \nডেলিভারীর সঠিক সময়টা আমরা সুনিশ্চিত ভাবে আপনাকে \nজানাতে পারি\n(ধন্যবাদান্তে মাদিনা ইশপ টিম)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

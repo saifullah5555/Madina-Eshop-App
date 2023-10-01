@@ -25,6 +25,10 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, ChooseLocationActivity::class.java)
             startActivity(intent)
         }
+        binding.tempHomeBtn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
