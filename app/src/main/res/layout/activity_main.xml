@@ -22,7 +22,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/kalpurush"
-        android:text="আপনার প্রয়োজনীয় পন্যটি বাছাই করুন"
+        android:text="আপনার প্রয়োজনীয় পন্যটি পছন্দ করুন"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

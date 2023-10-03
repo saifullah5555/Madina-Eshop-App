@@ -64,6 +64,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/kalpurush"
         android:text="জনপ্রিয় পন্য"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
