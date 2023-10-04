@@ -36,7 +36,10 @@ class CartFragment : Fragment() {
         )
 
         val adapter =
-            CartAdapter(ArrayList(CartFoodName), ArrayList(CartItemPrice), ArrayList(CartImage))
+            CartAdapter(
+                ArrayList(CartFoodName),
+                ArrayList(CartItemPrice),
+                ArrayList(CartImage))
         binding.CartRecylerView.layoutManager = LinearLayoutManager(requireContext())
         binding.CartRecylerView.adapter = adapter
 

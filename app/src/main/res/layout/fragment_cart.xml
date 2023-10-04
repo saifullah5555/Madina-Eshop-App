@@ -14,7 +14,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/kalpurush"
         android:text="কার্ট"
-        android:textSize="24sp"
+        android:textSize="@dimen/_18sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

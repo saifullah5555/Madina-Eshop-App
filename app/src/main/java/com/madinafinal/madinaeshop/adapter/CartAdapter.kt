@@ -46,7 +46,6 @@ private val itemQuantity = IntArray (cartItem.size) { 1 }
                 val itemPosition= adapterPosition
                     if(itemPosition != RecyclerView.NO_POSITION){
                         deleteItem(itemPosition)
-
                     }
 
                 }
@@ -54,9 +53,10 @@ private val itemQuantity = IntArray (cartItem.size) { 1 }
 
         }
         private fun increaseQuantity(position: Int) {
-            if (itemQuantity[position]>10){
+            if (itemQuantity[position]<10){
                 itemQuantity[position] ++
                 binding.cartItemQuantity.text = itemQuantity[position].toString()
+
             }
 
         }

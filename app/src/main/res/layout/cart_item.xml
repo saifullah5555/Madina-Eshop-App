@@ -38,7 +38,7 @@
                 android:id="@+id/CartFoodName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="@dimen/_12sdp"
                 android:fontFamily="@font/kalpurush"
                 android:text="পন্যের নাম"
                 android:textSize="20sp"

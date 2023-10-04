@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.madinafinal.madinaeshop.MenuBottomSheetFragment
 import com.madinafinal.madinaeshop.R
 import com.madinafinal.madinaeshop.adapter.PopularAdapter
 import com.madinafinal.madinaeshop.databinding.FragmentHomeBinding
@@ -29,6 +31,12 @@ class HomeFragment : Fragment() {
     ): View1 {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container,false)
+
+        binding.ViewallmenuButton.setOnClickListener {
+            val bottomSheetDialog= MenuBottomSheetFragment()
+            bottomSheetDialog.show(parentFragmentManager,"test")
+        }
+
         return binding.root
 
 
@@ -53,8 +61,10 @@ class HomeFragment : Fragment() {
 
         val foodName= listOf("জয়তুন ফল","সরিষা মধু","খলিসা ফুলের মধু","সুস্বাধু ড্রাই ফুড")
         val price= listOf("৳ ২০০","৳ ৫৯৯","৳ ৮০০","৳ ৫৫০")
-        val imagePopular= listOf(R.drawable.jaytun_banner2,R.drawable.sorisamodhu_banner,
-            R.drawable.khalisa_banner,R.drawable.dryfood_banner)
+        val imagePopular= listOf(R.drawable.jaytun_banner2,
+            R.drawable.sorisamodhu_banner,
+            R.drawable.khalisa_banner,
+            R.drawable.dryfood_banner)
 
         val adapter = PopularAdapter(foodName,price,imagePopular)
         binding.PopularRecyclerView.layoutManager = LinearLayoutManager(requireContext())

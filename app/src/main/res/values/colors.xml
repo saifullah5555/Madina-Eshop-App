@@ -4,5 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#25C97C</color>
     <color name="green2">#46df87</color>
+    <color name="iconColor">#FEAD1D</color>
 
 </resources>
