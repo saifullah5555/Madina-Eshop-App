@@ -52,6 +52,7 @@ class SearchFragment : Fragment() {
         binding.allMenuRecyclerView.adapter = adapter
 
             //setup for Search View
+
             setupSearchView()
             //show all menu items
             showAllMane()

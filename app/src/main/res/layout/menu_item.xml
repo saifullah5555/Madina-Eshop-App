@@ -51,7 +51,7 @@
                 android:id="@+id/menuitemprice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="52dp"
                 android:fontFamily="@font/kalpurush"
                 android:text="৳ ২০০"
