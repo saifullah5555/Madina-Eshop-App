@@ -6,8 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.madinafinal.madinaeshop.MenuBottomSheetFragment
+import com.madinafinal.madinaeshop.OtherFragment.MenuBottomSheetFragment
 import com.madinafinal.madinaeshop.R
 import com.madinafinal.madinaeshop.adapter.PopularAdapter
 import com.madinafinal.madinaeshop.databinding.FragmentHomeBinding

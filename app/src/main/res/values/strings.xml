@@ -6,4 +6,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mullo">মুল্য</string>
+    <string name="thikana">আপনার ঠিকানা টি লিখুন। যেমন: বাদামতলা বট তলার মোড় ,শিরোমনি,খুলনা, বাংলাদেশ। বিঃদ্রঃ লেখার নিচে লাল দাগ আসলে কোন সমস্যা নেই, আপনি লিখে ফেলুন</string>
 </resources>
