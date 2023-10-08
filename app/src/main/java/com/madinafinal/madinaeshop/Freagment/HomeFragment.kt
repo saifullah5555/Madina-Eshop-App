@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
             R.drawable.khalisa_banner,
             R.drawable.dryfood_banner)
 
-        val adapter = PopularAdapter(foodName,price,imagePopular)
+        val adapter = PopularAdapter(foodName,price,imagePopular,requireContext())
         binding.PopularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.PopularRecyclerView.adapter = adapter
 

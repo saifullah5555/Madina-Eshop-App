@@ -166,7 +166,7 @@
         android:layout_height="80dp">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button2"
+            android:id="@+id/GoHomeBtn"
             android:layout_width="250dp"
             android:layout_height="57dp"
             android:layout_gravity="center"

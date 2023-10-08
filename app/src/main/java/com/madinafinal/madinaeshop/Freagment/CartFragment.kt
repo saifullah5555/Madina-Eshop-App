@@ -1,13 +1,16 @@
 package com.madinafinal.madinaeshop.Freagment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.madinafinal.madinaeshop.PayOutActivity
 import com.madinafinal.madinaeshop.R
 import com.madinafinal.madinaeshop.adapter.CartAdapter
+import com.madinafinal.madinaeshop.databinding.ActivityPayOutBinding
 import com.madinafinal.madinaeshop.databinding.FragmentCartBinding
 
 
@@ -42,6 +45,10 @@ class CartFragment : Fragment() {
                 ArrayList(CartImage))
         binding.CartRecylerView.layoutManager = LinearLayoutManager(requireContext())
         binding.CartRecylerView.adapter = adapter
+        binding.ProceedButton.setOnClickListener {
+            val intent = Intent(requireContext(),PayOutActivity::class.java)
+            startActivity(intent)
+        }
 
 
         return binding.root

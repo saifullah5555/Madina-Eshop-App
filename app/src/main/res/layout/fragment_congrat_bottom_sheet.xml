@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="725dp"
+    android:background="@color/white"
+    tools:context=".CongratBottomSheetFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/kalpurush"
+        android:text="অভিনন্দন\nআপনার অর্ডার টি নিশ্চিত হয়েছে"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="25sp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="130dp"
+        android:layout_gravity="center"
+        android:src="@drawable/congratulation" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/GoHome"
+        android:layout_marginTop="60dp"
+        android:layout_width="180dp"
+        android:layout_height="57dp"
+        android:layout_gravity="center"
+        android:background="@drawable/gohomeshape"
+        android:elevation="6dp"
+        android:fontFamily="@font/kalpurush"
+        android:text="হোম পেজে ফিরে যান"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

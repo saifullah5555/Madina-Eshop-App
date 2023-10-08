@@ -22,7 +22,7 @@ class MenuBottomSheetFragment : BottomSheetDialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentMenuBottomSheetBinding.inflate(inflater,container,false)
         binding.ButtonBackInMenu.setOnClickListener {
@@ -46,7 +46,9 @@ class MenuBottomSheetFragment : BottomSheetDialogFragment() {
         val adapter = MenuAdapter(
             ArrayList(menuCartFoodName),
             ArrayList(menuCartItemPrice),
-            ArrayList(menuCartImage))
+            ArrayList(menuCartImage),
+            requireContext()
+        )
 
         binding.allMenuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.allMenuRecyclerView.adapter = adapter

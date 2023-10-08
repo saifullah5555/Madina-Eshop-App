@@ -17,7 +17,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/kalpurush"
-            android:text="Recent Bye"
+            android:text="সাম্প্রতিক কিনেছেন"
+            android:textColor="@color/green"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,12 +38,13 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:background="@color/white"
                 android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/byeAgainFoodImage"
-                    android:layout_width="62dp"
-                    android:layout_height="62dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
@@ -57,6 +60,7 @@
                     android:layout_marginStart="16dp"
                     android:fontFamily="@font/kalpurush"
                     android:text="পন্যের নাম"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/byeAgainFoodPrice"
                     app:layout_constraintStart_toEndOf="@+id/byeAgainFoodImage"
@@ -95,7 +99,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/kalpurush"
-            android:text="Recent Bye"
+            android:text="সাম্প্রতিক কিনেছেন"
+            android:textColor="@color/green"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 

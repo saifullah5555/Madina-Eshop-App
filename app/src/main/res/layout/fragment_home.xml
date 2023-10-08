@@ -15,7 +15,7 @@
         android:background="@drawable/textviewshape"
         android:elevation="6dp"
         android:fontFamily="@font/kalpurush"
-        android:text="মেনু"
+        android:text="সকল পন্য"
         android:textAlignment="center"
         android:textColor="@color/green"
         app:layout_constraintEnd_toEndOf="parent"

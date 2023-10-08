@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:gravity="center_horizontal">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:id="@+id/cardView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:cardCornerRadius="22dp"
         app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,13 +23,33 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/menuaddToCart2"
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+
+                android:background="@drawable/addtocartshape"
+                android:fontFamily="@font/kalpurush"
+                android:gravity="center"
+                android:text="এখনই কিনুন"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/menuaddToCart"
+                app:layout_constraintEnd_toStartOf="@+id/menuaddToCart"
+                app:layout_constraintHorizontal_bias="0.89"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/menuaddToCart"
+                app:layout_constraintVertical_bias="0.272" />
 
             <ImageView
                 android:id="@+id/menuimage"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:layout_marginLeft="8dp"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/madinaap_logo"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -40,8 +63,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginBottom="16dp"
                 android:fontFamily="@font/kalpurush"
                 android:text="প্রোডাক্ট"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/menuimage"
                 app:layout_constraintStart_toEndOf="@+id/menuimage"
@@ -51,32 +76,37 @@
                 android:id="@+id/menuitemprice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="52dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="45dp"
                 android:fontFamily="@font/kalpurush"
                 android:text="৳ ২০০"
                 android:textColor="@color/green"
                 android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.888" />
 
             <TextView
                 android:id="@+id/menuaddToCart"
-                android:layout_width="92dp"
+                android:layout_width="100dp"
                 android:layout_height="25dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="24dp"
+
                 android:background="@drawable/addtocartshape"
                 android:fontFamily="@font/kalpurush"
-                android:gravity="center_vertical"
                 android:text=" কার্টে যোগ করুন"
-
+                android:gravity="center"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.753" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

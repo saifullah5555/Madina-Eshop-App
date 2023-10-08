@@ -19,13 +19,32 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="@color/white"
             android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/addToCartPopular2"
+                android:layout_width="92dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/addtocartshape"
+                android:fontFamily="@font/kalpurush"
+
+                android:gravity="center"
+                android:text="এখনই কিনুন"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/addToCartPopular"
+                app:layout_constraintStart_toEndOf="@+id/imagePopular"
+                app:layout_constraintTop_toBottomOf="@+id/pricePopular" />
 
             <ImageView
                 android:id="@+id/imagePopular"
-                android:layout_width="64dp"
+                android:layout_width="70dp"
                 android:layout_height="64dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="12dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/madinaap_logo"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -38,9 +57,11 @@
                 android:id="@+id/foodNamePopular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="16dp"
                 android:fontFamily="@font/kalpurush"
                 android:text="প্রোডাক্ট"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imagePopular"
                 app:layout_constraintStart_toEndOf="@+id/imagePopular"

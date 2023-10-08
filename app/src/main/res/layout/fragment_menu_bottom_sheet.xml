@@ -8,11 +8,11 @@
     tools:context=".OtherFragment.MenuBottomSheetFragment">
 
     <ImageButton
-        android:layout_width="24dp"
+        android:layout_width="28dp"
         android:id="@+id/ButtonBackInMenu"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
         android:background="@android:color/transparent"
         android:src="@drawable/arrow_left"/>
 
@@ -24,7 +24,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/kalpurush"
         android:gravity="center"
-        android:text="মেনু"
+        android:text="সকল পন্য"
         android:textColor="@color/black"
         android:textSize="24sp" />
 

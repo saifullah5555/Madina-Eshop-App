@@ -21,13 +21,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/white">
 
             <ImageView
                 android:id="@+id/byeAgainFoodImage"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_marginStart="8dp"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="12dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/madinaap_logo"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -41,6 +42,7 @@
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/kalpurush"
                 android:text="পন্যের নাম"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/byeAgainFoodPrice"
                 app:layout_constraintStart_toEndOf="@+id/byeAgainFoodImage"
