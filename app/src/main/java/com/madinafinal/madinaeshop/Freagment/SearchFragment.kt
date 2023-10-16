@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.madinafinal.madinaeshop.R
 import com.madinafinal.madinaeshop.adapter.MenuAdapter
 import com.madinafinal.madinaeshop.databinding.FragmentSearchBinding
-import com.madinafinal.madinaeshop.databinding.MenuItemBinding
 
 class SearchFragment : Fragment() {
 
@@ -47,7 +46,10 @@ class SearchFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSearchBinding.inflate(inflater,container,false)
 
-        adapter = MenuAdapter(filterMenuItemName,filterMenuItemPrice,filterMenuImage,requireContext())
+      //  adapter = MenuAdapter(filterMenuItemName,
+       //     filterMenuItemPrice,
+        //    filterMenuImage,
+            //requireContext())
         binding.allMenuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
             binding.allMenuRecyclerView.adapter = adapter
 

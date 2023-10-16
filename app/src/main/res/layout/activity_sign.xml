@@ -7,6 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".SignActivity">
 
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="325dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/user_plus"
+        android:drawablePadding="9dp"
+        android:elevation="6dp"
+        android:ems="10"
+        android:fontFamily="@font/kalpurush"
+        android:hint="আপনার নাম লিখুন"
+        android:inputType="text"
+        android:paddingLeft="9dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView17"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
@@ -26,7 +46,7 @@
         android:id="@+id/Back_Login_Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:drawableLeft="@drawable/user_plus"
         android:drawablePadding="9dp"
@@ -36,13 +56,13 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextButton6" />
+        app:layout_constraintTop_toBottomOf="@+id/createAccountButton" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextButton6"
+        android:id="@+id/createAccountButton"
         android:layout_width="140dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/greenbuttongradient"
         android:elevation="6dp"
@@ -53,80 +73,10 @@
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextButton5" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextButton5"
-        android:layout_width="150dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/whitebutton"
-        android:drawableLeft="@drawable/facebook"
-        android:drawablePadding="9dp"
-        android:elevation="6dp"
-        android:fontFamily="@font/lato_normal"
-        android:gravity="center_vertical"
-        android:paddingLeft="12dp"
-        android:text="  Facebook"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/nextButton4"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextButton4"
-        android:layout_width="150dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/whitebutton"
-        android:drawableLeft="@drawable/google"
-        android:drawablePadding="9dp"
-        android:elevation="0dp"
-        android:fontFamily="@font/lato_normal"
-        android:gravity="center_vertical"
-        android:paddingLeft="12dp"
-        android:text="  Google"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintEnd_toStartOf="@+id/nextButton5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/kalpurush"
-        android:text="সরাসরি গুগোল / ফেসবুকের মাধ্যমে রেজিষ্টেশন করুন"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/kalpurush"
-        android:text="অথবা"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/userPassword" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/userPassword"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:layout_marginTop="16dp"
@@ -139,13 +89,14 @@
         android:hint="আপনার পাসওয়ার্ড টি লিখুন"
         android:inputType="textPassword"
         android:paddingLeft="9dp"
+        android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintEnd_toEndOf="@+id/userEmail"
+        app:layout_constraintStart_toStartOf="@+id/userEmail"
+        app:layout_constraintTop_toBottomOf="@+id/userEmail" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/userEmail"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:layout_marginTop="16dp"
@@ -158,10 +109,11 @@
         android:hint="আপনার ফোন নাম্বার/ইমেইল টি লিখুন"
         android:inputType="textEmailAddress"
         android:paddingLeft="9dp"
+        android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText"
-        app:layout_constraintStart_toStartOf="@+id/editTextText"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintEnd_toEndOf="@+id/userPhone"
+        app:layout_constraintStart_toStartOf="@+id/userPhone"
+        app:layout_constraintTop_toBottomOf="@+id/userPhone" />
 
     <TextView
         android:id="@+id/textView17"
@@ -219,21 +171,22 @@
         app:srcCompat="@drawable/wellcome_main" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/userPhone"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/edittextshape"
-        android:drawableLeft="@drawable/user_plus"
+        android:drawableLeft="@drawable/phone_icon"
         android:drawablePadding="9dp"
         android:elevation="6dp"
         android:ems="10"
         android:fontFamily="@font/kalpurush"
-        android:hint="আপনার নাম লিখুন"
-        android:inputType="text"
+        android:hint="আপনার মোবাইল নাম্বার টি লিখুন"
+        android:inputType="phone"
         android:paddingLeft="9dp"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/textView17"
         app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

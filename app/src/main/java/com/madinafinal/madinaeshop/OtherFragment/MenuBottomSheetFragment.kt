@@ -6,14 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.madinafinal.madinaeshop.R
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.madinafinal.madinaeshop.adapter.MenuAdapter
 import com.madinafinal.madinaeshop.databinding.FragmentMenuBottomSheetBinding
+import com.madinafinal.madinaeshop.model.MenuItem
 
 
 class MenuBottomSheetFragment : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentMenuBottomSheetBinding
 
+
+    private lateinit var database: FirebaseDatabase
+    private lateinit var menuItems: MutableList<com.madinafinal.madinaeshop.model.MenuItem>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -24,42 +32,50 @@ class MenuBottomSheetFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentMenuBottomSheetBinding.inflate(inflater,container,false)
+        binding = FragmentMenuBottomSheetBinding.inflate(inflater, container, false)
         binding.ButtonBackInMenu.setOnClickListener {
             dismiss()
         }
-        val menuCartFoodName = listOf("জয়তুন ফল", "সরিষা মধু", "খলিসা ফুলের মধু", "সুস্বাধু ড্রাই ফুড",
-            "জয়তুন ফল", "সরিষা মধু", "খলিসা ফুলের মধু", "সুস্বাধু ড্রাই ফুড")
-        val menuCartItemPrice = listOf("৳ ২০০", "৳ ৫৯৯", "৳ ৮০০", "৳ ৫৫০",
-            "৳ ২০০", "৳ ৫৯৯", "৳ ৮০০", "৳ ৫৫০")
-        val menuCartImage = listOf(
-            R.drawable.jaytun_banner2,
-            R.drawable.sorisamodhu_banner,
-            R.drawable.khalisa_banner,
-            R.drawable.dryfood_banner,
-            R.drawable.jaytun_banner2,
-            R.drawable.sorisamodhu_banner,
-            R.drawable.khalisa_banner,
-            R.drawable.dryfood_banner,
-        )
-
-        val adapter = MenuAdapter(
-            ArrayList(menuCartFoodName),
-            ArrayList(menuCartItemPrice),
-            ArrayList(menuCartImage),
-            requireContext()
-        )
-
-        binding.allMenuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.allMenuRecyclerView.adapter = adapter
-
-
-
-
+        retrieveMenuItem()
         return binding.root
     }
 
-    companion object {
+    private fun retrieveMenuItem() {
+// problem this
+        database = FirebaseDatabase.getInstance()
+        val foodRef: DatabaseReference = database.reference.child("menu")
+        menuItems = mutableListOf()
+        //fetch from database
+        foodRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (foodSnapshot in snapshot.children){
+                    val manuItem = foodSnapshot.getValue(MenuItem::class.java)
+                    manuItem?.let {menuItems.add(it) }
+                }
+                // once data received , set to adapter
+                setAdapter()
+            }
 
+
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
+
+
+    private fun setAdapter() {
+        val  adapter = MenuAdapter(menuItems,requireContext())
+        binding.allMenuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.allMenuRecyclerView.adapter = adapter
+    }
+
+
+companion object {
+
+}
+
+
 }
