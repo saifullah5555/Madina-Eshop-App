@@ -13,7 +13,7 @@ import com.madinafinal.madinaeshop.databinding.MenuItemBinding
 import com.madinafinal.madinaeshop.model.MenuItem
 
 class MenuAdapter(
-    private val menuItem: MutableList<MenuItem>,
+    private val menuItem: List<MenuItem>,
     private val requireContext: Context
 ) : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 

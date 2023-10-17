@@ -1,4 +1,5 @@
 package com.madinafinal.madinaeshop.Freagment
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -6,16 +7,25 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.madinafinal.madinaeshop.OtherFragment.MenuBottomSheetFragment
 import com.madinafinal.madinaeshop.R
-import com.madinafinal.madinaeshop.adapter.PopularAdapter
+import com.madinafinal.madinaeshop.adapter.MenuAdapter
 import com.madinafinal.madinaeshop.databinding.FragmentHomeBinding
+import com.madinafinal.madinaeshop.model.MenuItem
 import kotlin.collections.ArrayList
 import android.view.View as View1
 
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+
+    private lateinit var database: FirebaseDatabase
+    private lateinit var menuItemss: MutableList<MenuItem>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,16 +39,58 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View1 {
         // Inflate the layout for this fragment
-        binding = FragmentHomeBinding.inflate(inflater, container,false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.ViewallmenuButton.setOnClickListener {
-            val bottomSheetDialog= MenuBottomSheetFragment()
-            bottomSheetDialog.show(parentFragmentManager,"test")
+            val bottomSheetDialog = MenuBottomSheetFragment()
+            bottomSheetDialog.show(parentFragmentManager, "test")
         }
+
+        // retrieve and display popular menu Item
+        retrieveAndDisplayPopularMenuItem()
 
         return binding.root
 
+    }
 
+    private fun retrieveAndDisplayPopularMenuItem() {
+        //get reference to the database
+        database= FirebaseDatabase.getInstance()
+        val foodRef: DatabaseReference = database.reference.child("menu")
+        menuItemss = mutableListOf()
+
+        // retrieve menu item form the database
+        foodRef.addListenerForSingleValueEvent(object : ValueEventListener{
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+             for (foodSnapshot in snapshot.children){
+                 val menuItem = foodSnapshot.getValue(MenuItem::class.java)
+                 menuItem?.let {menuItemss.add(it)}
+             }
+                // display random popular item
+                randompopularItem()
+            }
+
+            private fun randompopularItem() {
+                // create as shuffled list of menu item
+                val index = menuItemss.indices.toList().shuffled()
+                val itemToShow = 6
+                val subsetMenuItem = index.take(itemToShow).map { menuItemss[it] }
+
+                setPopulareItemAdapter(subsetMenuItem)
+            }
+
+            private fun setPopulareItemAdapter(subsetMenuItem: List<MenuItem>) {
+                val adapter = MenuAdapter( subsetMenuItem,requireContext())
+                binding.PopularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+                binding.PopularRecyclerView.adapter = adapter
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
     }
 
     override fun onViewCreated(view: View1, savedInstanceState: Bundle?) {
@@ -56,19 +108,6 @@ class HomeFragment : Fragment() {
         val imageSlider = binding.imageSlider
         imageSlider.setImageList(imageList)
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
-
-
-        val foodName= listOf("জয়তুন ফল","সরিষা মধু","খলিসা ফুলের মধু","সুস্বাধু ড্রাই ফুড")
-        val price= listOf("৳ ২০০","৳ ৫৯৯","৳ ৮০০","৳ ৫৫০")
-        val imagePopular= listOf(R.drawable.jaytun_banner2,
-            R.drawable.sorisamodhu_banner,
-            R.drawable.khalisa_banner,
-            R.drawable.dryfood_banner)
-
-        val adapter = PopularAdapter(foodName,price,imagePopular,requireContext())
-        binding.PopularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.PopularRecyclerView.adapter = adapter
-
 
     }
 }
