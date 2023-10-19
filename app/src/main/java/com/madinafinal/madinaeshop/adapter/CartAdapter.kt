@@ -38,6 +38,8 @@ init {
     cartItemRefrence = database.reference.child("user").child(userId).child("CartItems")
 }
     companion object{
+
+
         private var itemQuantiti:IntArray= intArrayOf()
         private lateinit var cartItemRefrence: DatabaseReference
     }
@@ -52,6 +54,13 @@ init {
     }
 
     override fun getItemCount(): Int = cartItem.size
+    // get updated Quantity
+    fun getUpdateItemQuantitys(): MutableList<Int> {
+        val iteQuantity = mutableListOf<Int>()
+        iteQuantity.addAll(cartQuantity)
+        return iteQuantity
+    }
+
 
     inner class CartViewHolder(private val binding: CartItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -88,9 +97,11 @@ init {
 
         }
 
+
         private fun increaseQuantity(position: Int) {
             if (itemQuantiti[position] < 10) {
                 itemQuantiti[position]++
+                cartQuantity[position] = itemQuantiti[position]
                 binding.cartItemQuantity.text = itemQuantiti[position].toString()
 
             }
@@ -100,6 +111,7 @@ init {
         private fun deceaseQuantity(position: Int) {
             if (itemQuantiti[position] > 1) {
                 itemQuantiti[position]--
+                cartQuantity[position] = itemQuantiti[position]
                 binding.cartItemQuantity.text = itemQuantiti[position].toString()
             }
         }
@@ -110,6 +122,7 @@ init {
 if (uniquekey != null){
     removeItem(position,uniquekey)
 }
+                cartQuantity[position] = itemQuantiti[position]
             }
 
 

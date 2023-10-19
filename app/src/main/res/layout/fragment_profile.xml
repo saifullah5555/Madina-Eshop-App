@@ -35,6 +35,7 @@
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/profileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -70,6 +71,7 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/profileAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -105,6 +107,7 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/profileEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -142,6 +145,7 @@
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/profilePhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -166,7 +170,7 @@
         android:layout_height="80dp">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/GoHomeBtn"
+            android:id="@+id/profileSaveButton"
             android:layout_width="250dp"
             android:layout_height="57dp"
             android:layout_gravity="center"

@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".PayOutActivity">
 
     <ImageButton
@@ -51,27 +51,42 @@
             android:orientation="horizontal"
             android:paddingStart="8dp">
 
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="77dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="24dp"
-                android:elevation="5dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/bikash"
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="ডেলিভারী"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                app:layout_constraintStart_toEndOf="@+id/textView33"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="পেমেন্টের মাধ্যম"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:elevation="5dp"
-                android:src="@drawable/cashondelivery"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:src="@drawable/cash_delivery_icon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -82,13 +97,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/kalpurush"
-                android:text="পেমেন্টের মাধ্যম\nনির্বাচন করুন"
+                android:text="ক্যাশ অন"
                 android:textAlignment="center"
-                android:textColor="@color/green"
-                android:textSize="16sp"
+                android:textColor="@color/iconColor"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView18"
                 app:layout_constraintTop_toTopOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -115,6 +131,7 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/PayName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -150,6 +167,7 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/PayAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="130dp"
                 android:layout_marginStart="8dp"
@@ -185,6 +203,7 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/PayPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -223,14 +242,13 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView35"
+                android:id="@+id/totalAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="end"
                 android:layout_marginEnd="50dp"
+                android:layout_weight="1"
                 android:fontFamily="@font/kalpurush"
-                android:text="৳ ২০০"
+                android:gravity="end"
                 android:textColor="@color/iconColor"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -247,7 +265,7 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/GoConrat"
+            android:id="@+id/plaseMyOrderBtn"
             android:layout_width="273dp"
             android:layout_height="57dp"
             android:layout_gravity="center"

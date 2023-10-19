@@ -5,56 +5,94 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.madinafinal.madinaeshop.R
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.madinafinal.madinaeshop.databinding.FragmentProfileBinding
+import com.madinafinal.madinaeshop.model.UserModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+    private lateinit var binding: FragmentProfileBinding
+    private val auth = FirebaseAuth.getInstance()
+    private val database = FirebaseDatabase.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentProfileBinding.inflate(inflater,container,false)
+
+        setUSerData()
+
+        binding.profileSaveButton.setOnClickListener {
+val name = binding.profileName.text.toString()
+val email = binding.profileEmail.text.toString()
+val address = binding.profileAddress.text.toString()
+val phone = binding.profilePhone.text.toString()
+
+            updateUserData(name,email,address,phone)
+
+        }
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun updateUserData(name: String, email: String, address: String, phone: String) {
+        val userId = auth.currentUser?.uid
+        if (userId != null){
+            val userReference = database.getReference().child("user").child(userId)
+            val userData = hashMapOf(
+                "name" to name,
+                "address" to address,
+                "email" to email,
+                "phone" to phone,
+                )
+            userReference.setValue(userData).addOnSuccessListener {
+                Toast.makeText(requireContext(), "আপনার তথ্যটি সফলভাবে সেভ করা হয়েছে🥰✨", Toast.LENGTH_SHORT).show()
             }
+                .addOnFailureListener {
+                    Toast.makeText(requireContext(), "আপনার তথ্যটি নবায়ন করা যায়নি😢", Toast.LENGTH_SHORT).show()
+                }
+        }
     }
+
+    private fun setUSerData() {
+        val userId = auth.currentUser?.uid
+        if (userId != null){
+            val userRefrence = database.getReference("user").child(userId)
+            userRefrence.addListenerForSingleValueEvent(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()){
+                        val userProfile = snapshot.getValue(UserModel::class.java)
+                        if (userId != null){
+                            binding.profileName.setText(userProfile?.name)
+                            binding.profileAddress.setText(userProfile?.address)
+                            binding.profileEmail.setText(userProfile?.email)
+                            binding.profilePhone.setText(userProfile?.phone)
+
+
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+        }
+
+
+    }
+
+
 }
