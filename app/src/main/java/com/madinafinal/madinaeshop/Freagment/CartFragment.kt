@@ -104,7 +104,7 @@ class CartFragment : Fragment() {
         })
     }
 
-    public fun orderNow(
+    private fun orderNow(
         foodName: MutableList<String>,
         foodPrice: MutableList<String>,
         foodDescription: MutableList<String>,

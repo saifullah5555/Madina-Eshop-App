@@ -1,11 +1,12 @@
 package com.madinafinal.madinaeshop.Freagment
 
+import android.R
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -15,6 +16,7 @@ import com.google.firebase.database.ValueEventListener
 import com.madinafinal.madinaeshop.adapter.MenuAdapter
 import com.madinafinal.madinaeshop.databinding.FragmentSearchBinding
 import com.madinafinal.madinaeshop.model.MenuItemm
+
 
 class SearchFragment : Fragment() {
 
@@ -39,8 +41,6 @@ class SearchFragment : Fragment() {
         //setup for Search View
 
         setupSearchView()
-
-
 
 
         return binding.root

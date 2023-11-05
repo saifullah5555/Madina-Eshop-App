@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="830dp"
     tools:context=".Freagment.CartFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -24,10 +24,9 @@
         android:id="@+id/CartRecylerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/ProceedButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
@@ -35,7 +34,7 @@
         android:id="@+id/ProceedButton"
         android:layout_width="325dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="250dp"
         android:background="@drawable/proceedbutonshape"
         android:elevation="5dp"
         android:fontFamily="@font/kalpurush"
@@ -45,6 +44,7 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CartRecylerView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

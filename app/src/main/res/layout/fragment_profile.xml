@@ -183,9 +183,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:layout_height="192dp"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="10dp"
-        android:layout_height="wrap_content">
+        android:layout_marginBottom="10dp">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/logOutBtn"
@@ -193,7 +193,7 @@
             android:layout_height="35dp"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="32dp"
             android:layout_weight="1"
             android:background="@drawable/greenbuttongradient"
             android:elevation="6dp"
@@ -204,7 +204,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/profileSaveButton"
             app:layout_constraintStart_toStartOf="@+id/profileSaveButton"
-            app:layout_constraintTop_toBottomOf="@+id/profileSaveButton" />
+            app:layout_constraintTop_toBottomOf="@+id/profileSaveButton"
+            app:layout_constraintVertical_bias="0.115" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/profileSaveButton"
