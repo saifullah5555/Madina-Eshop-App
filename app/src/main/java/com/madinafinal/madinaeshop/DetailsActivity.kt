@@ -1,5 +1,6 @@
 package com.madinafinal.madinaeshop
 
+
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,12 +13,12 @@ import com.madinafinal.madinaeshop.model.CartItem
 
 class DetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding
-
     private var foodName: String? = null
     private var foodImage: String? = null
     private var foodsDecription: String? = null
     private var foodIngradint: String? = null
     private var foodPrice: String? = null
+    private var foodQuantitties: Int? = 1
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,11 +34,13 @@ class DetailsActivity : AppCompatActivity() {
         foodPrice = intent.getStringExtra("menuitemprice")
         foodImage = intent.getStringExtra("menuimage")
 
+
         with(binding) {
             DetailFoodName.text = foodName
             decriptionTextView.text = foodsDecription
             ingradianTextView.text = foodIngradint
             detailPrice.text = foodPrice
+
 
 
             Glide.with(this@DetailsActivity).load(Uri.parse(foodImage)).into(DetailFoodImage)
@@ -46,16 +49,17 @@ class DetailsActivity : AppCompatActivity() {
         binding.DetailBackButton.setOnClickListener {
             finish()
         }
-        binding.detailByenowButton.setOnClickListener {
-
-        }
 
         binding.detailAddToCartButton.setOnClickListener {
             addItemToCart()
         }
+        binding.detailByenowButton.setOnClickListener {
 
+        }
 
     }
+
+
 
     private fun addItemToCart() {
         val database = FirebaseDatabase.getInstance().reference
@@ -73,8 +77,10 @@ class DetailsActivity : AppCompatActivity() {
                 Toast.makeText(this, "Item added into cart successfully🥰", Toast.LENGTH_SHORT)
                     .show()
             }.addOnFailureListener {
-            Toast.makeText(this, "Item not added 😥", Toast.LENGTH_SHORT).show()
-        }
+                Toast.makeText(this, "Item not added 😥", Toast.LENGTH_SHORT).show()
+            }
     }
+
+
 
 }

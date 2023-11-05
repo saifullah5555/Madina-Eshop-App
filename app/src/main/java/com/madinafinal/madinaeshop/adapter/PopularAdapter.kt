@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.madinafinal.madinaeshop.DetailsActivity
 import com.madinafinal.madinaeshop.databinding.PopulaItemBinding
+import com.madinafinal.madinaeshop.model.OrderDetails
 
 class PopularAdapter (private val items:List<String>,
                       private val price:List<String>,
@@ -45,6 +46,7 @@ class PopularAdapter (private val items:List<String>,
         }
 
     }
+
 
 
 }

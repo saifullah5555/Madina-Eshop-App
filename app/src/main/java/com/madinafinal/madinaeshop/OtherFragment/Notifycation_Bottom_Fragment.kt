@@ -40,6 +40,7 @@ class Notifycation_Bottom_Fragment : BottomSheetDialogFragment() {
         return binding.root
     }
 
+
     companion object {
 
     }

@@ -1,174 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
+    android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".DetailsActivity">
 
 
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/detailAddToCartButton"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
 
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/addtocartshape"
-        android:elevation="5dp"
-        android:fontFamily="@font/kalpurush"
-        android:text="কার্টে যোগ করুন"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailByenowButton" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-    <ImageButton
-        android:id="@+id/DetailBackButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/transparent"
-        android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow_left" />
-
-    <TextView
-        android:id="@+id/DetailFoodName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/kalpurush"
-        android:text="FoodName"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DetailBackButton" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DetailFoodName">
-
-        <ImageView
-            android:id="@+id/DetailFoodImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/sorisamodhu_banner" />
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/kalpurush"
-        android:text="সংক্ষিপ্ত বিবরণ"
-        android:textColor="@color/green"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
-
-    <TextView
-        android:id="@+id/decriptionTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="32dp"
-        android:fontFamily="@font/kalpurush"
-        android:text="@string/thikana"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView29"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
-
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/kalpurush"
-        android:text="উপাদান"
-        android:textColor="@color/green2"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.022"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/decriptionTextView" />
-
-    <TextView
-        android:id="@+id/ingradianTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/kalpurush"
-        android:text="@string/thikana"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+            >
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/detailByenowButton"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/addtocartshape"
-        android:elevation="5dp"
-        android:fontFamily="@font/kalpurush"
-        android:text="এখনই কিনুন"
-        android:textColor="#FFEB3B"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/detailAddToCartButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailPrice" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detailAddToCartButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
 
-    <TextView
-        android:id="@+id/detailPrice"
-        android:layout_width="100sp"
-        android:layout_height="40sp"
-        android:layout_marginTop="16dp"
-        android:background="@color/or"
-        android:fontFamily="@font/kalpurush"
-        android:gravity="center"
-        android:padding="3dp"
-        android:text="TextView"
-        android:textColor="@color/green"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/ingradianTextView"
-        app:layout_constraintStart_toStartOf="@+id/ingradianTextView"
-        app:layout_constraintTop_toBottomOf="@+id/ingradianTextView" />
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/addtocartshape"
+                android:elevation="5dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="কার্টে যোগ করুন"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailByenowButton" />
+
+            <ImageButton
+                android:id="@+id/DetailBackButton"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/arrow_left" />
+
+            <TextView
+                android:id="@+id/DetailFoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/kalpurush"
+                android:text="FoodName"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/DetailBackButton" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/DetailFoodName">
+
+                <ImageView
+                    android:id="@+id/DetailFoodImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sorisamodhu_banner" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="সংক্ষিপ্ত বিবরণ"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+            <TextView
+                android:id="@+id/decriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="@string/thikana"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView29"
+                app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="উপাদান"
+                android:textColor="@color/green2"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.022"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/decriptionTextView" />
+
+            <TextView
+                android:id="@+id/ingradianTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="@string/thikana"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.045"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detailByenowButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/addtocartshape"
+                android:elevation="5dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="এখনই কিনুন"
+                android:textColor="#FFEB3B"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/detailAddToCartButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailPrice" />
+
+            <TextView
+                android:id="@+id/detailPrice"
+                android:layout_width="100sp"
+                android:layout_height="40sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="148dp"
+                android:background="@color/or"
+                android:fontFamily="@font/kalpurush"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="TextView"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ingradianTextView" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="মুল্য"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/detailPrice"
+                app:layout_constraintEnd_toStartOf="@+id/detailPrice"
+                app:layout_constraintTop_toTopOf="@+id/detailPrice"
+                app:layout_constraintVertical_bias="0.529" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

@@ -1,5 +1,6 @@
 package com.madinafinal.madinaeshop.Freagment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.madinafinal.madinaeshop.LoginActivity
 import com.madinafinal.madinaeshop.databinding.FragmentProfileBinding
 import com.madinafinal.madinaeshop.model.UserModel
 
@@ -30,6 +32,22 @@ class ProfileFragment : Fragment() {
     ): View? {
         binding = FragmentProfileBinding.inflate(inflater,container,false)
 
+        binding.apply {
+            profileName.isEnabled = false
+            profileAddress.isEnabled = false
+            profileEmail.isEnabled  = false
+            profilePhone.isEnabled = false
+
+        binding.editeProfilee.setOnClickListener {
+
+
+                profileName.isEnabled = !profileName.isEnabled
+                profileAddress.isEnabled = !profileAddress.isEnabled
+                profileEmail.isEnabled = !profileEmail.isEnabled
+                profilePhone.isEnabled = !profilePhone.isEnabled
+            }
+        }
+
         setUSerData()
 
         binding.profileSaveButton.setOnClickListener {
@@ -42,8 +60,20 @@ val phone = binding.profilePhone.text.toString()
 
         }
 
+        binding.logOutBtn.setOnClickListener {
+            auth.signOut()
+            val intent = Intent(context,LoginActivity::class.java)
+
+            startActivity(intent)
+
+
+         //   startActivity(Intent(this,SignUpActivity::class.java))
+          //  finish()
+        }
+
         // Inflate the layout for this fragment
         return binding.root
+
     }
 
     private fun updateUserData(name: String, email: String, address: String, phone: String) {
@@ -85,7 +115,7 @@ val phone = binding.profilePhone.text.toString()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
+
                 }
 
             })

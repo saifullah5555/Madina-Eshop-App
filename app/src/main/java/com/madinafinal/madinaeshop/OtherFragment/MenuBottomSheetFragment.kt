@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.madinafinal.madinaeshop.adapter.MenuAdapter
 import com.madinafinal.madinaeshop.databinding.FragmentMenuBottomSheetBinding
-import com.madinafinal.madinaeshop.model.MenuItem
+import com.madinafinal.madinaeshop.model.MenuItemm
 
 
 class MenuBottomSheetFragment : BottomSheetDialogFragment() {
@@ -21,7 +21,7 @@ class MenuBottomSheetFragment : BottomSheetDialogFragment() {
 
 
     private lateinit var database: FirebaseDatabase
-    private lateinit var menuItems: MutableList<com.madinafinal.madinaeshop.model.MenuItem>
+    private lateinit var menuItemms: MutableList<com.madinafinal.madinaeshop.model.MenuItemm>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -44,13 +44,13 @@ class MenuBottomSheetFragment : BottomSheetDialogFragment() {
 // problem this
         database = FirebaseDatabase.getInstance()
         val foodRef: DatabaseReference = database.reference.child("menu")
-        menuItems = mutableListOf()
+        menuItemms = mutableListOf()
         //fetch from database
         foodRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (foodSnapshot in snapshot.children){
-                    val manuItem = foodSnapshot.getValue(MenuItem::class.java)
-                    manuItem?.let {menuItems.add(it) }
+                    val manuItem = foodSnapshot.getValue(MenuItemm::class.java)
+                    manuItem?.let {menuItemms.add(it) }
                 }
                 // once data received , set to adapter
                 setAdapter()
@@ -67,7 +67,7 @@ class MenuBottomSheetFragment : BottomSheetDialogFragment() {
 
 
     private fun setAdapter() {
-        val  adapter = MenuAdapter(menuItems,requireContext())
+        val  adapter = MenuAdapter(menuItemms,requireContext())
         binding.allMenuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.allMenuRecyclerView.adapter = adapter
     }

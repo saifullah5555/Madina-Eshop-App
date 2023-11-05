@@ -2,7 +2,6 @@ package com.madinafinal.madinaeshop
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         var bottomnav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomnav.setupWithNavController(NavController)
         binding.notificationButton.setOnClickListener {
-            val BottomShetDaylog = Notifycation_Bottom_Fragment()
-            BottomShetDaylog.show(supportFragmentManager,"test")
+            val BottomShedDyalog = Notifycation_Bottom_Fragment()
+            BottomShedDyalog.show(supportFragmentManager,"test")
         }
 
     }

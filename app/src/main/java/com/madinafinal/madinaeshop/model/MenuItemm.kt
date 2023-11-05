@@ -1,6 +1,6 @@
 package com.madinafinal.madinaeshop.model
 
-data class MenuItem(
+data class MenuItemm(
     var foodName: String? =null,
     var foodPrice: String? = null,
     var foodsDecription: String? = null,

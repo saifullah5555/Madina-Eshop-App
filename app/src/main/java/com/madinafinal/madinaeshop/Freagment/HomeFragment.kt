@@ -16,7 +16,7 @@ import com.madinafinal.madinaeshop.OtherFragment.MenuBottomSheetFragment
 import com.madinafinal.madinaeshop.R
 import com.madinafinal.madinaeshop.adapter.MenuAdapter
 import com.madinafinal.madinaeshop.databinding.FragmentHomeBinding
-import com.madinafinal.madinaeshop.model.MenuItem
+import com.madinafinal.madinaeshop.model.MenuItemm
 import kotlin.collections.ArrayList
 import android.view.View as View1
 
@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
     private lateinit var database: FirebaseDatabase
-    private lateinit var menuItemss: MutableList<MenuItem>
+    private lateinit var menuItemsses: MutableList<MenuItemm>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,15 +57,15 @@ class HomeFragment : Fragment() {
         //get reference to the database
         database= FirebaseDatabase.getInstance()
         val foodRef: DatabaseReference = database.reference.child("menu")
-        menuItemss = mutableListOf()
+        menuItemsses = mutableListOf()
 
         // retrieve menu item form the database
         foodRef.addListenerForSingleValueEvent(object : ValueEventListener{
 
             override fun onDataChange(snapshot: DataSnapshot) {
              for (foodSnapshot in snapshot.children){
-                 val menuItem = foodSnapshot.getValue(MenuItem::class.java)
-                 menuItem?.let {menuItemss.add(it)}
+                 val menuItemm = foodSnapshot.getValue(MenuItemm::class.java)
+                 menuItemm?.let {menuItemsses.add(it)}
              }
                 // display random popular item
                 randompopularItem()
@@ -73,15 +73,15 @@ class HomeFragment : Fragment() {
 
             private fun randompopularItem() {
                 // create as shuffled list of menu item
-                val index = menuItemss.indices.toList().shuffled()
-                val itemToShow = 6
-                val subsetMenuItem = index.take(itemToShow).map { menuItemss[it] }
+                val index = menuItemsses.indices.toList().shuffled()
+                val itemToShow = 15
+                val subsetMenuItem = index.take(itemToShow).map { menuItemsses[it] }
 
-                setPopulareItemAdapter(subsetMenuItem)
+                setPopularItemAdapter(subsetMenuItem)
             }
 
-            private fun setPopulareItemAdapter(subsetMenuItem: List<MenuItem>) {
-                val adapter = MenuAdapter( subsetMenuItem,requireContext())
+            private fun setPopularItemAdapter(subsetMenuItemm: List<MenuItemm>) {
+                val adapter = MenuAdapter( subsetMenuItemm,requireContext())
                 binding.PopularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                 binding.PopularRecyclerView.adapter = adapter
             }

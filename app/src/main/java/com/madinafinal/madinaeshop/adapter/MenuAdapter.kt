@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.madinafinal.madinaeshop.DetailsActivity
 import com.madinafinal.madinaeshop.databinding.MenuItemBinding
-import com.madinafinal.madinaeshop.model.MenuItem
+import com.madinafinal.madinaeshop.model.MenuItemm
 
 class MenuAdapter(
-    private val menuItem: List<MenuItem>,
+    private val menuItemm: List<MenuItemm>,
     private val requireContext: Context
 ) : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 
@@ -28,7 +28,7 @@ class MenuAdapter(
         holder.bind(position)
     }
 
-    override fun getItemCount(): Int = menuItem.size
+    override fun getItemCount(): Int = menuItemm.size
 
     inner class MenuViewHolder(private val binding: MenuItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -42,7 +42,7 @@ class MenuAdapter(
         }
 
         private fun openDetailActivity(position: Int) {
-            val menuItem = menuItem[position]
+            val menuItem = menuItemm[position]
 
             // a intent to open detail activity and pass data
             val intent = Intent(requireContext, DetailsActivity::class.java).apply {
@@ -57,7 +57,7 @@ class MenuAdapter(
         }
  // set data in to recycler view ,image, name, price
         fun bind(position: Int) {
-            val menuItem = menuItem[position]
+            val menuItem = menuItemm[position]
             binding.apply {
                 menufoodName.text = menuItem.foodName
                 menuitemprice.text = menuItem.foodPrice
