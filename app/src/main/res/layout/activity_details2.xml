@@ -29,57 +29,60 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView32"
                 app:srcCompat="@drawable/greenbuttongradient" />
 
-            <ImageButton
-                android:id="@+id/DetailBackButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
-                android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/arrow_left" />
-
             <TextView
                 android:id="@+id/DetailFoodName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:fontFamily="@font/kalpurush"
                 android:text="FoodName"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/DetailBackButton" />
+                app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView3"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                app:cardCornerRadius="10dp"
+                android:layout_height="300dp"
+              app:cardCornerRadius="15dp"
+            android:backgroundTint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/DetailFoodName">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/DetailFoodImage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
+                    android:scaleType="centerInside"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
                     android:src="@drawable/sorisamodhu_banner" />
+
+                <ImageButton
+                    android:id="@+id/DetailBackButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/transparent"
+                    android:layerType="hardware"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/arrow_left" />
+
             </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/detailPrice"
                 android:layout_width="80sp"
                 android:layout_height="40sp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="140dp"
+                android:layout_marginTop="35dp"
                 android:background="@drawable/whitebutton"
                 android:fontFamily="@font/kalpurush"
                 android:gravity="center"
@@ -87,7 +90,7 @@
                 android:text="TextView"
                 android:textColor="@color/green"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/DetailFoodName"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/textView37"
                 app:layout_constraintTop_toBottomOf="@+id/cardView3" />
@@ -96,7 +99,7 @@
                 android:id="@+id/textView37"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
+                android:layout_marginStart="16dp"
                 android:fontFamily="@font/kalpurush"
                 android:text="মুল্য"
                 android:textColor="@color/black"
@@ -104,7 +107,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/detailPrice"
                 app:layout_constraintEnd_toStartOf="@+id/detailPrice"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/DetailFoodName"
                 app:layout_constraintTop_toTopOf="@+id/detailPrice"
                 app:layout_constraintVertical_bias="0.529" />
 
@@ -113,7 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/addtocartshape"
                 android:elevation="5dp"
@@ -134,7 +137,7 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="32dp"
 
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/addtocartshape"
                 android:elevation="5dp"
