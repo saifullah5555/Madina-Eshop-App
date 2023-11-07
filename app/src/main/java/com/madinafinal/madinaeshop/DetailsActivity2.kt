@@ -1,6 +1,5 @@
 package com.madinafinal.madinaeshop
 
-
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,22 +7,22 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import com.madinafinal.madinaeshop.databinding.ActivityDetailsBinding
+import com.madinafinal.madinaeshop.databinding.ActivityDetails2Binding
 import com.madinafinal.madinaeshop.model.CartItem
 
-class DetailsActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityDetailsBinding
+class DetailsActivity2 : AppCompatActivity() {
+    private lateinit var binding: ActivityDetails2Binding
     private var foodName: String? = null
     private var foodImage: String? = null
     private var foodsDecription: String? = null
     private var foodIngradint: String? = null
     private var foodPrice: String? = null
-    private var foodQuantitties: Int? = 1
+
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailsBinding.inflate(layoutInflater)
+        binding = ActivityDetails2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         // initialize Firebase auth
         auth = FirebaseAuth.getInstance()
@@ -43,7 +42,7 @@ class DetailsActivity : AppCompatActivity() {
 
 
 
-            Glide.with(this@DetailsActivity).load(Uri.parse(foodImage)).into(DetailFoodImage)
+            Glide.with(this@DetailsActivity2).load(Uri.parse(foodImage)).into(DetailFoodImage)
         }
         //for back button
         binding.DetailBackButton.setOnClickListener {

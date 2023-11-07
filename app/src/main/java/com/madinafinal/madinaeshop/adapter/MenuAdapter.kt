@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.madinafinal.madinaeshop.DetailsActivity
+import com.madinafinal.madinaeshop.DetailsActivity2
 import com.madinafinal.madinaeshop.databinding.MenuItemBinding
 import com.madinafinal.madinaeshop.model.MenuItemm
 
@@ -45,7 +45,7 @@ class MenuAdapter(
             val menuItem = menuItemm[position]
 
             // a intent to open detail activity and pass data
-            val intent = Intent(requireContext, DetailsActivity::class.java).apply {
+            val intent = Intent(requireContext, DetailsActivity2::class.java).apply {
                 putExtra("menufoodName", menuItem.foodName)
                 putExtra("menuimage", menuItem.foodImage)
                 putExtra("decriptionTextView", menuItem.foodsDecription)
