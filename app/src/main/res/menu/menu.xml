@@ -27,7 +27,7 @@
         android:icon="@drawable/history"/>
     <item
         android:layout_width="wrap_content"
-        android:id="@+id/profileFragment"
+        android:id="@+id/blankFragment"
         android:layout_height="wrap_content"
         android:title="Profile"
         android:icon="@drawable/user"/>
