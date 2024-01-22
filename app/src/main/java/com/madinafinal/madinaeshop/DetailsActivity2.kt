@@ -1,10 +1,10 @@
 package com.madinafinal.madinaeshop
 
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.bumptech.glide.Glide
+import androidx.appcompat.app.AppCompatActivity
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.madinafinal.madinaeshop.databinding.ActivityDetails2Binding
@@ -42,7 +42,21 @@ class DetailsActivity2 : AppCompatActivity() {
 
 
 
-            Glide.with(this@DetailsActivity2).load(Uri.parse(foodImage)).into(DetailFoodImage)
+            val imageList = ArrayList<SlideModel>()
+            imageList.add(SlideModel(foodImage, ScaleTypes.FIT))
+            imageList.add(SlideModel(R.drawable.jaytun_banner2, ScaleTypes.FIT))
+            imageList.add(SlideModel(R.drawable.dryfood_banner, ScaleTypes.FIT))
+            imageList.add(SlideModel(R.drawable.khalisa_banner, ScaleTypes.FIT))
+            imageList.add(SlideModel(R.drawable.sorisamodhu_banner, ScaleTypes.FIT))
+
+
+            val imageSlider = binding.imageSliderr
+            imageSlider.setImageList(imageList)
+            imageSlider.setImageList(imageList, ScaleTypes.FIT)
+
+
+
+
         }
         //for back button
         binding.DetailBackButton.setOnClickListener {

@@ -41,27 +41,31 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+                app:layout_constraintTop_toBottomOf="@+id/imageviewww" />
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView3"
+                android:id="@+id/imageviewww"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-              app:cardCornerRadius="15dp"
-            android:backgroundTint="@color/white"
+                android:layout_height="250dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/DetailFoodImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerInside"
-                    android:layout_marginBottom="3dp"
-                    android:layout_marginTop="3dp"
-                    android:src="@drawable/sorisamodhu_banner" />
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/image_sliderr"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:iss_auto_cycle="true"
+                    app:iss_delay="10000"
+                    app:iss_no_dots="false"
+                    app:iss_period="10000"
+                    app:iss_text_align="CENTER" />
+
 
                 <ImageButton
                     android:id="@+id/DetailBackButton"
@@ -93,7 +97,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/DetailFoodName"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/textView37"
-                app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+                app:layout_constraintTop_toBottomOf="@+id/imageviewww" />
 
             <TextView
                 android:id="@+id/textView37"
@@ -111,46 +115,39 @@
                 app:layout_constraintTop_toTopOf="@+id/detailPrice"
                 app:layout_constraintVertical_bias="0.529" />
 
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/detailByenowButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
                 android:background="@drawable/addtocartshape"
                 android:elevation="5dp"
                 android:fontFamily="@font/kalpurush"
                 android:text="এখনই কিনুন"
                 android:textColor="#FFEB3B"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/detailAddToCartButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toStartOf="@+id/detailAddToCartButton"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailPrice" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/detailAddToCartButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginStart="32dp"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
 
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
                 android:background="@drawable/addtocartshape"
                 android:elevation="5dp"
                 android:fontFamily="@font/kalpurush"
                 android:text="কার্টে যোগ করুন"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailByenowButton" />
-
+                app:layout_constraintStart_toEndOf="@+id/detailByenowButton"
+                app:layout_constraintTop_toBottomOf="@+id/detailPrice" />
 
             <TextView
                 android:id="@+id/textView29"

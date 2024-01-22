@@ -1,9 +1,9 @@
 package com.madinafinal.madinaeshop.Freagment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
@@ -17,7 +17,6 @@ import com.madinafinal.madinaeshop.R
 import com.madinafinal.madinaeshop.adapter.MenuAdapter
 import com.madinafinal.madinaeshop.databinding.FragmentHomeBinding
 import com.madinafinal.madinaeshop.model.MenuItemm
-import kotlin.collections.ArrayList
 import android.view.View as View1
 
 
@@ -74,7 +73,7 @@ class HomeFragment : Fragment() {
             private fun randompopularItem() {
                 // create as shuffled list of menu item
                 val index = menuItemsses.indices.toList().shuffled()
-                val itemToShow = 15
+                val itemToShow = 20
                 val subsetMenuItem = index.take(itemToShow).map { menuItemsses[it] }
 
                 setPopularItemAdapter(subsetMenuItem)
