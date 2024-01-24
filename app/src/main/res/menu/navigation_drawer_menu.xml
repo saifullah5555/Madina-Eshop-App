@@ -2,45 +2,103 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/homee"
+        android:id="@+id/nvUser"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:checkable="true"
+
+        android:icon="@drawable/user"
+        android:title="Profile" />
+    <item
+        android:id="@+id/nvhome"
+        android:layout_width="wrap_content"
+
+        android:checkable="true"
+
         android:layout_height="wrap_content"
         android:icon="@drawable/home"
         android:title="Home" />
     <item
+        android:id="@+id/nvNewItem"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:icon="@drawable/user"
-        android:title="Profile" />
-    <item
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:icon="@drawable/settings"
-        android:title="Setting" />
-    <item
-        android:layout_width="wrap_content"
+
+        android:checkable="true"
+
         android:layout_height="wrap_content"
         android:icon="@drawable/cart"
         android:title="New Item" />
     <item
+        android:id="@+id/nvOurAbout"
         android:layout_width="wrap_content"
+
+        android:checkable="true"
+
         android:layout_height="wrap_content"
         android:icon="@drawable/madinaap_logo"
         android:title="Our About" />
     <item
+        android:id="@+id/nvSetting"
         android:layout_width="wrap_content"
+
+        android:checkable="true"
+
         android:layout_height="wrap_content"
-        android:icon="@drawable/plus"
-        android:title="Bangla Calander" />
+        android:icon="@drawable/settings"
+        android:title="Setting" />
+
+
+    <item android:title="Islamic">
+        <menu>
+            <item
+                android:id="@+id/IslamicVideos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:checkable="true"
+
+                android:icon="@drawable/video"
+                android:title="Islamic Videos" />
+
+        </menu>
+
+    </item>
+
+
+
     <item
+        android:id="@+id/nvOnlineMadrasa"
         android:layout_width="wrap_content"
+
+        android:checkable="true"
+
         android:layout_height="wrap_content"
         android:icon="@drawable/edit"
         android:title="Online Madrasha" />
     <item
+        android:id="@+id/nvBanglaCalander"
         android:layout_width="wrap_content"
+
+        android:checkable="true"
+
+        android:layout_height="wrap_content"
+        android:icon="@drawable/calendar"
+        android:title="Bangla Calander" />
+    <item
+        android:id="@+id/nvLogOut"
+        android:layout_width="wrap_content"
+
+        android:checkable="true"
+
         android:layout_height="wrap_content"
 
         android:icon="@drawable/logout"
         android:title="Log Out" />
+
+    <item>
+
+    </item>
+    <item>
+
+    </item>
 </menu>

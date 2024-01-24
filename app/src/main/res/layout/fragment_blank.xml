@@ -5,7 +5,7 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   tools:openDrawer="start"
+
     android:background="@color/white"
     tools:context=".Freagment.BlankFragment">
 
@@ -23,6 +23,9 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_marginStart="@dimen/_8sdp"
+                app:titleTextColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:navigationIcon="@drawable/pompom"
@@ -49,13 +52,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/NavigationView"
         android:layout_width="wrap_content"
-        app:itemTextColor="@color/black"
-        app:itemIconTint="@color/black"
         android:layout_height="match_parent"
+        android:layout_gravity="start"
         android:background="@color/white"
-        app:menu="@menu/navigation_drawer_menu"
         app:headerLayout="@layout/hader_layout"
-        android:layout_gravity="start"/>
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/navigation_drawer_menu"
+        app:subheaderColor="@color/green2" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

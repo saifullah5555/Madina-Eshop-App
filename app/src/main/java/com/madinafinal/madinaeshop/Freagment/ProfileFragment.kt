@@ -2,17 +2,19 @@ package com.madinafinal.madinaeshop.Freagment
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.madinafinal.madinaeshop.LoginActivity
+import com.madinafinal.madinaeshop.R
 import com.madinafinal.madinaeshop.databinding.FragmentProfileBinding
 import com.madinafinal.madinaeshop.model.UserModel
 
@@ -57,6 +59,12 @@ val address = binding.profileAddress.text.toString()
 val phone = binding.profilePhone.text.toString()
 
             updateUserData(name,email,address,phone)
+
+        }
+
+        binding.ProfileBackButton.setOnClickListener {
+
+            findNavController().navigate(R.id.blankFragment)
 
         }
 

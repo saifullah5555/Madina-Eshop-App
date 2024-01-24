@@ -1,7 +1,7 @@
 package com.madinafinal.madinaeshop
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             val BottomShedDyalog = Notifycation_Bottom_Fragment()
             BottomShedDyalog.show(supportFragmentManager,"test")
         }
+
 
     }
 }

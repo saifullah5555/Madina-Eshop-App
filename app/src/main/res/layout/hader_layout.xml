@@ -10,6 +10,8 @@
         android:id="@+id/imageView14"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_150sdp"
+        android:backgroundTintMode="add"
+        android:hapticFeedbackEnabled="false"
         android:scaleType="centerCrop"
         android:src="@drawable/mnmn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +23,7 @@
         android:id="@+id/ooo"
         android:layout_width="@dimen/_56sdp"
         android:layout_height="@dimen/_56sdp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         app:cardCornerRadius="@dimen/_50sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ooo" />
 
     <TextView
+        android:id="@+id/Namee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -59,5 +62,12 @@
         app:layout_constraintEnd_toEndOf="@+id/ooo"
         app:layout_constraintStart_toStartOf="@+id/imageView14"
         app:layout_constraintTop_toBottomOf="@+id/nnn" />
+
+    <ImageView
+        android:layout_width="900dp"
+        android:layout_height="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/greenbuttongradient" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

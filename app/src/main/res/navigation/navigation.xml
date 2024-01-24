@@ -35,4 +35,14 @@
         android:name="com.madinafinal.madinaeshop.Freagment.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
+    <fragment
+        android:id="@+id/logOutFragment"
+        android:name="com.madinafinal.madinaeshop.LogOutFragment"
+        android:label="fragment_log_out"
+        tools:layout="@layout/fragment_log_out" />
+    <fragment
+        android:id="@+id/islamicVideoFragment"
+        android:name="com.madinafinal.madinaeshop.IslamicVideoFragment"
+        android:label="fragment_islamic_video"
+        tools:layout="@layout/fragment_islamic_video" />
 </navigation>

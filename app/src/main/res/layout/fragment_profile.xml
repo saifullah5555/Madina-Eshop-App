@@ -8,28 +8,46 @@
     android:background="@color/white"
     tools:context=".Freagment.ProfileFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/editeProfilee"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:layerType="hardware"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/edit" />
+
+        <ImageButton
+            android:id="@+id/ProfileBackButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:layerType="hardware"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_left" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35sdp"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/editeProfilee"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="right"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/greenbuttongradient"
-            android:paddingStart="15dp"
-            android:layout_marginRight="16dp"
-            android:drawableLeft="@drawable/edit"
-            android:elevation="7dp"
-
-
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:paddingLeft="8dp"
-            app:iconPadding="0dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
