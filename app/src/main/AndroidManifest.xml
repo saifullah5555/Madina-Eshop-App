@@ -3,6 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
@@ -16,6 +24,34 @@
         android:theme="@style/Theme.MadinaEshop"
         tools:targetApi="31">
         <activity
+            android:name=".CalenderActivity"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="false"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_calender"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CalanderActivity"
+            android:exported="false"
+            android:label="@string/title_activity_calander"
+            android:theme="@style/Theme.MadinaEshop" />
+        <activity
+            android:name=".DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlaybackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BrowseErrorActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailsActivity2"
             android:exported="false" />
         <activity
@@ -24,7 +60,6 @@
         <activity
             android:name=".PayOutActivity"
             android:exported="false" />
-
         <activity
             android:name=".ChooseLocationActivity"
             android:exported="false" />
@@ -49,7 +84,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.madinafinal.madinaeshop.Freagment
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,6 +18,7 @@ class BlankFragment : androidx.fragment.app.Fragment() {
 
 
     private lateinit var binding: FragmentBlankBinding
+    private lateinit var context: Context
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,6 +83,10 @@ class BlankFragment : androidx.fragment.app.Fragment() {
 
                     findNavController().navigate(R.id.islamicVideoFragment)
                 }
+
+
+
+
 
 
             }
