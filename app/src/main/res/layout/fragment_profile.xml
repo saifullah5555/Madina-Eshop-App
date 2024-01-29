@@ -207,16 +207,16 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/logOutBtn"
-            android:layout_width="80dp"
+            android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="32dp"
             android:layout_weight="1"
-            android:background="@drawable/greenbuttongradient"
+            android:background="@drawable/logout"
             android:elevation="6dp"
             android:fontFamily="@font/kalpurush"
-            android:text="লগ আউট"
+
             android:textColor="#E61717"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"

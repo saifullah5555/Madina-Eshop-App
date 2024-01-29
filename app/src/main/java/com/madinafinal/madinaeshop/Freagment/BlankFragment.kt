@@ -2,6 +2,7 @@ package com.madinafinal.madinaeshop.Freagment
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +10,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.madinafinal.madinaeshop.LoginActivity
 import com.madinafinal.madinaeshop.R
 import com.madinafinal.madinaeshop.databinding.FragmentBlankBinding
-
 
 
 class BlankFragment : androidx.fragment.app.Fragment() {
@@ -19,6 +21,7 @@ class BlankFragment : androidx.fragment.app.Fragment() {
 
     private lateinit var binding: FragmentBlankBinding
     private lateinit var context: Context
+    private val auth = FirebaseAuth.getInstance()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +51,6 @@ class BlankFragment : androidx.fragment.app.Fragment() {
         binding.NavigationView.setNavigationItemSelectedListener { valu ->
 
 
-
             binding.drawerLayout.close()
 
             // navigation er modde jei item tate click korbo seta bold hoe thakar jonno nicer code
@@ -58,15 +60,14 @@ class BlankFragment : androidx.fragment.app.Fragment() {
 
                 R.id.nvhome -> {
 
-                    findNavController().navigate(R.id. homeFragment)
+                    findNavController().navigate(R.id.homeFragment)
 
 
                 }
 
                 R.id.nvUser -> {
 
-                    findNavController().navigate(R.id. profileFragment)
-
+                    findNavController().navigate(R.id.profileFragment)
 
 
                 }
@@ -76,17 +77,34 @@ class BlankFragment : androidx.fragment.app.Fragment() {
                 }
 
                 R.id.nvLogOut -> {
-                    findNavController().navigate(R.id.logOutFragment)
+                    auth.signOut()
+                    val intent = Intent(context, LoginActivity::class.java)
+
+                    startActivity(intent)
                 }
 
-                R.id.IslamicVideos ->{
+                R.id.IslamicVideos -> {
 
-                    findNavController().navigate(R.id.islamicVideoFragment)
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.data = Uri.parse("https://youtu.be/iC6izVPJGLY?si=a-9lW-RK7cAKGK26")
+                    startActivity(intent)
                 }
 
+                R.id.nvBanglaCalander -> {
+                    findNavController().navigate(R.id.clanderrFragment)
+                }
+
+                R.id.nvOnlineMadrasa -> {
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.data = Uri.parse("https://www.facebook.com/darularkamonlinemadrasah/")
+                    startActivity(intent)
+                }
+
+                R.id.nvNewItem ->{
 
 
 
+                }
 
 
             }
@@ -103,17 +121,15 @@ class BlankFragment : androidx.fragment.app.Fragment() {
         val userProfile: ImageView = HaderBinding.findViewById(R.id.userProfile)
         val title: TextView = HaderBinding.findViewById(R.id.Namee)
 
-    title.setOnClickListener {
-        startActivity(Intent(context,ProfileFragment::class.java))
-    }
+        title.setOnClickListener {
+            startActivity(Intent(context, ProfileFragment::class.java))
+        }
 
 
         return binding.root
 
 
     }
-
-
 
 
 }
