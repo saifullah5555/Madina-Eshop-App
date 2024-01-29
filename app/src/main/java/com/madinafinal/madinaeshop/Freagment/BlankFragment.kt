@@ -10,8 +10,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
-import com.madinafinal.madinaeshop.LoginActivity
 import com.madinafinal.madinaeshop.R
 import com.madinafinal.madinaeshop.databinding.FragmentBlankBinding
 
@@ -21,7 +19,7 @@ class BlankFragment : androidx.fragment.app.Fragment() {
 
     private lateinit var binding: FragmentBlankBinding
     private lateinit var context: Context
-    private val auth = FirebaseAuth.getInstance()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,10 +75,7 @@ class BlankFragment : androidx.fragment.app.Fragment() {
                 }
 
                 R.id.nvLogOut -> {
-                    auth.signOut()
-                    val intent = Intent(context, LoginActivity::class.java)
-
-                    startActivity(intent)
+                    findNavController().navigate(R.id.logOutFragment)
                 }
 
                 R.id.IslamicVideos -> {

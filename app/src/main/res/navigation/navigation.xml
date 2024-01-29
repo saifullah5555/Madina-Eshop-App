@@ -42,4 +42,9 @@
         android:name="com.madinafinal.madinaeshop.clanderrFragment"
         android:label="fragment_clanderr"
         tools:layout="@layout/fragment_clanderr" />
+    <fragment
+        android:id="@+id/logOutFragment"
+        android:name="com.madinafinal.madinaeshop.LogOutFragment"
+        android:label="fragment_log_out"
+        tools:layout="@layout/fragment_log_out" />
 </navigation>
