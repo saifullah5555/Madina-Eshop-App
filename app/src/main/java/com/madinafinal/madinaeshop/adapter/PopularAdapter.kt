@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.recyclerview.widget.RecyclerView
 import com.madinafinal.madinaeshop.DetailsActivity2
 import com.madinafinal.madinaeshop.databinding.PopulaItemBinding
@@ -15,7 +16,12 @@ class PopularAdapter(
     private val requireContext: Context
 ) : RecyclerView.Adapter<PopularAdapter.PopularViewHolder>() {
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularViewHolder {
+
+
+
         return PopularViewHolder(
             PopulaItemBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -23,10 +29,15 @@ class PopularAdapter(
                 false
             )
         )
+
     }
 
 
     override fun onBindViewHolder(holder: PopularViewHolder, position: Int) {
+
+
+
+
         val item = items[position]
         val images = image[position]
         val price = price[position]
@@ -47,7 +58,12 @@ class PopularAdapter(
     class PopularViewHolder(private val binding: PopulaItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         private val imagesView = binding.imagePopular
+
+
         fun bind(item: String, price: String, images: Int) {
+
+
+
             binding.foodNamePopular.text = item
             binding.pricePopular.text = price
             imagesView.setImageResource(images)

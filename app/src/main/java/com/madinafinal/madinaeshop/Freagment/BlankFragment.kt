@@ -67,7 +67,6 @@ class BlankFragment : androidx.fragment.app.Fragment() {
 
                     findNavController().navigate(R.id.profileFragment)
 
-
                 }
 
                 R.id.nvNewItem -> {

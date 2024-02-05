@@ -2,7 +2,10 @@ package com.madinafinal.madinaeshop.Freagment
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
@@ -25,6 +28,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var database: FirebaseDatabase
     private lateinit var menuItemsses: MutableList<MenuItemm>
+    private lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,15 +44,32 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        progressBar = binding.progressBarr
+        binding.prtext.visibility = View.VISIBLE
+
+        // লোডিং অ্যানিমেশন শুরু করুন
+        progressBar.visibility = View.VISIBLE
+        Toast.makeText(context, "আচ্ছালামু আলাইকুম😊🥰", Toast.LENGTH_SHORT).show()
+
+
+
+
         binding.ViewallmenuButton.setOnClickListener {
             val bottomSheetDialog = MenuBottomSheetFragment()
             bottomSheetDialog.show(parentFragmentManager, "test")
         }
 
+
+
+
         // retrieve and display popular menu Item
         retrieveAndDisplayPopularMenuItem()
 
+
+
         return binding.root
+
+
 
     }
 
@@ -83,6 +104,14 @@ class HomeFragment : Fragment() {
                 val adapter = MenuAdapter( subsetMenuItemm,requireContext())
                 binding.PopularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                 binding.PopularRecyclerView.adapter = adapter
+
+
+                // ডেটা লোড হওয়ার পর লোডিং অ্যানিমেশন বন্ধ করুন
+                progressBar.visibility = View.GONE
+                binding.prtext.visibility = View.GONE
+
+                // আপনার অ্যাপের UI-এর সাথে ডেটা প্রদর্শন করুন
+                // ...
             }
 
             override fun onCancelled(error: DatabaseError) {

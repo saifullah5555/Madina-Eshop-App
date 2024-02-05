@@ -45,6 +45,41 @@
 
     </androidx.cardview.widget.CardView>
 
+
+    <ProgressBar
+        android:id="@+id/progressBarr"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="32dp"
+        android:background="@android:color/transparent"
+
+
+
+        android:indeterminateTint="@color/green2"
+
+
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/PopularRecyclerView"
+        app:layout_constraintVertical_bias="0.282" />
+
+    <TextView
+        android:id="@+id/prtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/kalpurush"
+        android:textColor="@color/fastlane_background"
+        android:text="অনুগ্রহ পূর্বক অপেক্ষা করুন\n    পন্য গুলি লোড হচ্ছে"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="@+id/progressBarr"
+        app:layout_constraintStart_toStartOf="@+id/progressBarr"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarr" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/PopularRecyclerView"
         android:layout_width="0dp"
@@ -59,11 +94,11 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/kalpurush"
         android:text="জনপ্রিয় পন্য"
         android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
